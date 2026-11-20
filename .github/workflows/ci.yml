@@ -75,6 +75,10 @@ jobs:
       - name: Check formatting
         run: pnpm run prettier-check
 
+      # The tests import the package from dist, so lint, tsc and Jest need the build.
+      - name: Build
+        run: pnpm run build
+
       # Type-aware lint over src and test.
       - name: Lint
         run: pnpm run lint
@@ -82,9 +86,6 @@ jobs:
       # Covers src and test, as configured in tsconfig.json.
       - name: Typecheck
         run: pnpm exec tsc --noEmit
-
-      - name: Build
-        run: pnpm run build
 
       - name: Test
         run: pnpm run test
