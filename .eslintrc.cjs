@@ -33,7 +33,7 @@ module.exports = {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
 
-    // Doesn't work with our neolution-ch packages
+    // Doesn't work with our @collana-solutions packages
     "import/named": "off",
 
     // Enforce double quotes

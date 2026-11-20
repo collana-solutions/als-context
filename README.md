@@ -1,4 +1,4 @@
-# @neolution-ch/als-context
+# @collana-solutions/als-context
 
 This package is a wrapper for the `AsyncLocalStorage`.
 Documentation: https://nodejs.org/api/async_context.html#async_context_class_asynclocalstorage.
@@ -48,7 +48,7 @@ Using it:
 
 ```typescript
 // eslint-disable-next-line global-require
-const alsModule = require("@neolution-ch/als-context");
+const alsModule = require("@collana-solutions/als-context");
 const alsContext: AlsContext<AlsTokenContext> = new alsModule.AlsContext();
 return alsContext.getStore()?.token;
 ```
@@ -60,7 +60,7 @@ return alsContext.getStore()?.token;
 ```typescript
 if (typeof window === "undefined") {
   // eslint-disable-next-line global-require
-  const alsModule = require("@neolution-ch/als-context");
+  const alsModule = require("@collana-solutions/als-context");
   const alsContext: AlsContext<YourInterfaceHere> = new alsModule.AlsContext();
 }
 ```
@@ -68,13 +68,13 @@ if (typeof window === "undefined") {
 But we are allowed to always import the type:
 
 ```typescript
-import { AlsContext } from "@neolution-ch/als-context/dist/lib/AlsContext/AlsContext";
+import { AlsContext } from "@collana-solutions/als-context/dist/lib/AlsContext/AlsContext";
 ```
 
 ```typescript
 if (typeof window === "undefined") {
   // eslint-disable-next-line global-require
-  const alsModule = require("@neolution-ch/als-context");
+  const alsModule = require("@collana-solutions/als-context");
   const alsContext: AlsContext<YourInterfaceHere> = new alsModule.AlsContext();
 }
 ```
@@ -84,7 +84,7 @@ You also have to tell webpack to not try to bundle it like so:
 ```javascript
 webpack: (config, { isServer }) => {
     if (!isServer) {
-        config.plugins.push(new IgnorePlugin(/^(\@neolution-ch\/als-context)$/));
+        config.plugins.push(new IgnorePlugin(/^(\@collana-solutions\/als-context)$/));
     }
 
     return config;
