@@ -1,5 +1,24 @@
 # @collana-solutions/als-context
 
+## 3.2.1
+
+### Patch Changes
+
+- [#68](https://github.com/collana-solutions/als-context/pull/68) [`9637ece`](https://github.com/collana-solutions/als-context/commit/9637ece391431754b2b614197ad6eb2fd832be10) Thanks [@neotrow](https://github.com/neotrow)! - The package is now published as `@collana-solutions/als-context`. The API is unchanged, and the new name starts at 3.2.0 with the same code as the last `@neolution-ch/als-context` release. To migrate, replace the old package with the new one:
+  
+  ```shell
+  npm uninstall @neolution-ch/als-context
+  npm install @collana-solutions/als-context
+  ```
+  
+  Then change every `import` and `require` of `@neolution-ch/als-context` to `@collana-solutions/als-context`, including the webpack `IgnorePlugin` pattern if you use one:
+  
+  ```js
+  config.plugins.push(new IgnorePlugin(/^(@collana-solutions\/als-context)$/));
+  ```
+  
+  `@neolution-ch/als-context` gets deprecated and receives no further releases.
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
